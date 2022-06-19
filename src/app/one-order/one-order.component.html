@@ -1,0 +1,114 @@
+<div >
+<section>
+  <br />
+  <div class="mb-6 lg:mb-0">
+    <div class="block rounded-lg shadow-lg bg-white h-full">
+      <div class="p-6 border-b border-gray-300 text-center">
+        <p class="uppercase mb-4 text-sm">
+          <strong id="textFont" >Cart Information</strong>
+        </p>
+        <h3  class="text-2xl mb-6">
+          <small id="textFont"  class="text-gray-500 text-sm">{{ cart._id }}</small>
+        </h3>
+        <button
+        (click)="validate()"
+        id="textFont" 
+          type="button"
+          class="inline-block px-6 py-2.5 bg-transparent text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out w-full"
+          style="background-color: hsl(0, 0%, 95%)"
+          data-mdb-ripple="true"
+          data-ripple-color="primary"
+        >
+          Validate
+        </button>
+      </div>
+      <div class="p-6">
+        <ol class="list-inside">
+          <li class="mb-4 flex items-center">
+            <svg
+            
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="check"
+              class="text-green-600 w-4 h-4 mr-2"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              ></path></svg
+            >Username: &nbsp;
+            <small id="textFont"  class="text-gray-500">{{ user ? user.userName : "" }}</small>
+          </li>
+
+          <li class="mb-4 flex items-center">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="check"
+              class="text-green-600 w-4 h-4 mr-2"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              ></path></svg
+            >Address: &nbsp;
+            <small id="textFont" class="text-gray-500">{{ user ? user.adress : "" }}</small>
+          </li>
+          <li class="mb-4 flex items-center">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="check"
+              class="text-green-600 w-4 h-4 mr-2"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              ></path></svg
+            >Phone Number: &nbsp;
+            <small id="textFont" class="text-gray-500">{{
+              user ? user.phoneNumber : ""
+            }}</small>
+          </li>
+          <li class="mb-4 flex items-center">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="check"
+              class="text-green-600 w-4 h-4 mr-2"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+              ></path></svg
+            >Products:
+          </li>
+          <div>
+            <app-one-order-product
+              *ngFor="let product of cart.products"
+              [product]="product"
+            ></app-one-order-product>
+          </div>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <br />
+</section>
+</div>

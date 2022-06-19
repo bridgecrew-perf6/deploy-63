@@ -1,0 +1,51 @@
+<div>
+  <nav class="navbar flex bg-gray-900">
+    <div class="navbar-logo">
+      Shopium
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+        />
+      </svg>
+    </div>
+    <ul class="nav-items">
+      <li key="1" class="nav-item">
+        <div>
+          <a routerLink="/home">Home</a></div>
+      </li>
+      <li key="2" class="nav-item">
+        <div><a routerLink="/aboutus">About-us</a></div>
+      </li>
+      <li key="3" class="nav-item">
+        <div><a routerLink="/navigateProds">Shop</a></div>
+      </li>
+
+      <li *ngIf="!connected" key="6" class="nav-item">
+        <div>
+          <a routerLink="/login">Login</a>
+        </div>
+      </li>
+
+      <li *ngIf="connected" key="7" class="nav-item">
+        <div>
+          <a (click)="logout()">Logout</a>
+        </div>
+      </li>
+      <li *ngIf="!connected" key="8" class="nav-item">
+        <div>
+          <button class="btn" routerLink="/signup" style="color:antiquewhite">Sign Up</button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>

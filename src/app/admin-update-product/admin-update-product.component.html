@@ -1,0 +1,71 @@
+<br><br><br><br>
+<div id="cont">
+<div class="flex justify-center">
+  <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+    <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2" style="color:rgb(93, 38, 93) ; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder; font-size:x-large;">Edit Product:</h5>
+    <div class="cont">
+      <div class="row">
+        <div class="col mb-3 sm-7 md-4 lg-3">
+          <div class="product-card">
+            <img
+              style="width: 300px; height: 300px"
+              [src]="currentProd.data.imageUrl"
+              alt="img"
+            />
+          </div>
+          <br />
+          <div>
+            <form
+              class="addProductForm"
+              #editForm="ngForm"
+              (ngSubmit)="updateProduct(editForm.value)"
+            >
+              <div class="card-title" style="color:rgb(62, 4, 123) ; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder;">
+                Current name: <div style="color:rgb(190, 122, 172) ; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder;">{{ currentProd.data.productName }}</div>
+              </div>
+              <input
+                name="productName"
+                type="text"
+                placeholder="New product name..."
+                ngModel
+              />
+              <br />
+              <div class="card-title" style="color:rgb(62, 4, 123) ; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder;">
+                Description:
+                <input
+                  name="description"
+                  type="text"
+                  placeholder="New description..."
+                  ngModel
+                />
+              </div>
+              <br />
+              <div class="card-title" style="color:rgb(190, 122, 172) ; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder;">
+                {{ currentProd.data.price }}
+                <input
+                  name="price"
+                  type="number"
+                  placeholder="New price..."
+                  ngModel
+                />
+              </div>
+              <div class="card-title" style="color:rgb(62, 4, 123) ; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder;">
+                Current stock: <div style="color:rgb(190, 122, 172) ; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bolder;">{{ currentProd.data.stock }}</div> 
+                <input
+                  type="text"
+                  name="stock"
+                  placeholder="New stock..."
+                  ngModel
+                />
+              </div>
+              <br />
+              <div>
+                <button class="updateProductButton">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

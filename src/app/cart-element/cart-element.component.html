@@ -1,0 +1,35 @@
+<div class="flex-auto">
+  <div
+    class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg"
+  >
+    <img
+      class="w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+      [src]="p.imageUrl"
+      alt=""
+    />
+    <div class="p-6 flex flex-col justify-start">
+      <h5 class="text-gray-900 text-xl font-medium mb-2">
+        {{ p.productName }}
+      </h5>
+      <p
+        class="text-gray-700 text-base mb-4"
+        min="1"
+        type="number"
+        value="quantity"
+        name=""
+      >
+        Qt:
+        <strong><button (click)="sub()" class="add-nd-dec" style="color: rgb(248, 191, 35)">-</button></strong>
+        {{ p.quantity }} <strong><button (click)="add()" style="color:green ;">+</button></strong>
+      </p>
+      <div class="price">{{ p.price }} TND</div>
+      <button
+        (click)="delete(p)"
+
+        class="px-2 py-0 red-100 bg-red-600 rounded"
+      >
+        x
+      </button>
+    </div>
+  </div>
+</div>

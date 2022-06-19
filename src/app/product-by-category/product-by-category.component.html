@@ -1,0 +1,104 @@
+<div class="beauty-container">
+  <div class="bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="max-w-2xl mx-auto py-16 sm:py-24 lg:py-32 lg:max-w-none"
+        class="aa"
+      >
+          <div class="flex-auto">
+            <div class="mb-3 xl:w-96">
+              <div class="input-group relative flex flex-wrap items-stretch w-full mb-4">
+                <input type="search" class="search form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" name="search" [(ngModel)]="searchText" aria-label="Search" aria-describedby="button-addon2" >
+                <button class="search btn inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          
+
+          <div
+            class="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6"
+          >
+            <div *ngFor="let product of allProducts | filter: searchText">
+              <div class="group relative">
+                <div
+                  id="product-card"
+                  class="relative w-full h-80 bg-grey rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1"
+                >
+                  <img
+                    id="product-image"
+                    style="width: 200px; height: 200px"
+                    [src]="product.imageUrl"
+                    alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                    class="w-full h-full object-center object-cover group-hover:opacity-75"
+                  />
+                </div>
+                <h3 class="mt-6 text-sm text-gray-500">
+                  <span class="absolute inset-0"></span>
+                  {{ product.productName }}
+                </h3>
+
+                <br />
+                <div class="btn-wraper">
+                  <p
+                    id="product-price"
+                    class="text-base font-semibold text-gray-900" style="color: #6b4575 ;"
+                  >
+                    {{ product.price }} TND
+                  </p>
+                  <div>
+                    <button class="btn" style="text-align: center" (click)="addToCart(product)">
+            
+                    <svg                    
+                      id="svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      style="color: #d183e6 ;"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+          
+                  </button>
+                    <br />
+                  </div>
+
+                  <!-- "<button class="btn" (click)="addToCart(product)"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  </svg></button>" -->
+                </div>
+
+                <br />
+              </div>
+              <button class="btn inline-block px-6 py-2.5 bg-gray-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out" (click)="seeMore(product._id)" data-mdb-ripple-color="purple">Buy</button>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="third-verticale">
+    <img
+      src="https://www.designhill.com/design-blog/wp-content/uploads/2017/07/offer-deal.png"
+      style="width: 300px; height: 400px"
+    />
+    <br />
+    <img
+      src="https://i.pinimg.com/736x/b3/ba/a5/b3baa50931a16e0d330eeb5650a1a0ec.jpg"
+      style="width: 300px; height: 800px"
+    />
+    <br />
+  
+  </div>
+</div>

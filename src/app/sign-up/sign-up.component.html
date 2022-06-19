@@ -1,0 +1,147 @@
+<br>
+<div id="cont" class="block p-6 rounded-lg shadow-lg bg-white max-w-md" style="transform: translateX(85%);"><br>
+    <h3 style="transform: translateX(12%); color: rgb(103, 48, 156);">Create Your Account</h3>
+    <br>
+    <form id="cont" [formGroup] = "myForm">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="form-group mb-6">
+          <input type="text" class="form-control
+            block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput123"
+            aria-describedby="emailHelp123" placeholder="Username" formControlName="userName" />
+            <div *ngIf="myForm.controls['userName'].invalid && 
+                    (myForm.controls['userName'].dirty || myForm.controls['userName'].touched)">
+                        <span *ngIf="myForm.controls['userName'].errors.minlength" class="error">
+                            user name must have at least 5 characters !!
+                        </span>
+                        <span *ngIf="myForm.controls['userName'].errors.required" class="error">
+                            user name name is required !!
+                        </span>
+                    </div>
+        </div>
+        <div class="form-group mb-6">
+          <input type="text" class="form-control
+            block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput124"
+            aria-describedby="emailHelp124" placeholder="PhoneNumber" formControlName="phoneNumber" />
+            <div *ngIf="myForm.controls['phoneNumber'].invalid && 
+                    (myForm.controls['phoneNumber'].dirty || myForm.controls['phoneNumber'].touched)">
+                    <span *ngIf="myForm.controls['phoneNumber'].errors.minlength" class="error">
+                        invalid phonenumber!
+                    </span>
+                    <span *ngIf="myForm.controls['phoneNumber'].errors.maxlength" class="error">
+                        invalid phonenumber!
+                    </span>
+                    <span *ngIf="myForm.controls['phoneNumber'].errors.required" class="error">
+                        phonenumber is required !!
+                    </span>
+                    <span *ngIf="myForm.controls['phoneNumber'].errors.pattern" class="error">
+                        only number!
+                    </span>
+                    </div>
+        </div>
+      </div>
+      <div class="form-group mb-6">
+        <input type="adress" class="form-control block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput125"
+          placeholder="Adress" formControlName="adress" />
+          <div *ngIf="myForm.controls['adress'].invalid && 
+                    (myForm.controls['adress'].dirty || myForm.controls['adress'].touched)">
+                    <span *ngIf="myForm.controls['adress'].errors.required" class="error">
+                        adress is required !!
+                    </span>
+                    </div>
+      </div>
+      <div class="form-group mb-6">
+        <input type="email" class="form-control block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput126"
+          placeholder="Email address" formControlName="email" />
+          <div *ngIf="myForm.controls['email'].invalid && 
+                (myForm.controls['email'].dirty || myForm.controls['email'].touched)">
+                    <span *ngIf="myForm.controls['email'].errors.email" class="error">
+                        Email Invalid !!
+                    </span>
+                    <span *ngIf="myForm.controls['email'].errors.required" class="error">
+                        Email is required !!
+                    </span>
+                </div>
+      </div>
+      <div class="form-group mb-6">
+        <input type="password" class="form-control block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput126"
+          placeholder="Password" formControlName="password" />
+          <div *ngIf="myForm.controls['password'].invalid && 
+                (myForm.controls['password'].dirty || myForm.controls['password'].touched)">
+                    <span *ngIf="myForm.controls['password'].errors.minlength" class="error">
+                        password must have at least 8 characters !!
+                    </span>
+                    <span *ngIf="myForm.controls['password'].errors.maxlength" class="error">
+                        password must have at most 12 characters !!
+                    </span>
+                </div>
+      </div>
+      <button type="submit" [disabled]='myForm.invalid' (click)='signup(myForm.value)' class=" inline-block px-7 py-3 mb-2 md:mb-0 md:mr-2 bg-gray-900 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-800 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"> Create
+        Account</button>
+    </form>
+  </div>
+  <br>
